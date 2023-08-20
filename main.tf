@@ -52,4 +52,25 @@ resource "abbey_grant_kit" "abbey_demo_site" {
     EOT
   }
 }
+name: Deploy Grant Kit
+on:
+  push:
+    branches:
+      - main
 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y terraform
+
+      - name: Deploy Grant Kit
+        run: |
+          terraform init
+          terraform apply
