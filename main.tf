@@ -30,14 +30,14 @@ resource "abbey_grant_kit" "abbey_demo_site" {
     steps = [
       {
         reviewers = {
-          one_of = ["replace-me@example.com"] # CHANGEME
+          one_of = ["sunilpandey1245@gmail.com"] # CHANGEME
         }
       }
     ]
   }
 
   policies = [
-    { bundle = "github://replace-me-with-organization/replace-me-with-repo/policies" } # CHANGEME
+    { bundle = "github://suniel12/abbey/policies" } # CHANGEME
   ]
 
   output = {
